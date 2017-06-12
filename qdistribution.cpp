@@ -57,7 +57,7 @@ double QDistribution::NormalZiggurat() {
         setupNormalTables();
         int iter = 0;
         do {
-            unsigned long long B = qrand();
+            unsigned long long B = -1 + qrand() * 2;
             int stairId = B & 255;
             double x = UniformDistibRNDGenerator(0, stairWidth[stairId]); // get horizontal coordinate
             if (x < stairWidth[stairId + 1])
